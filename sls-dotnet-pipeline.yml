@@ -95,7 +95,7 @@ Resources:
         Type: CODEPIPELINE
       Environment:
         ComputeType: BUILD_GENERAL1_SMALL
-        Image: aws/codebuild/ubuntu-base:14.04
+        Image: aws/codebuild/nodejs:10.1.0
         Type: LINUX_CONTAINER
       Name: !Sub ServerlessDeployBuild-${DeploymentStage}
       ServiceRole: !Ref ServerlessDeployRole
