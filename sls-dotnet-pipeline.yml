@@ -106,19 +106,13 @@ Resources:
           phases:
             install:
               commands:
-                - apt install nodejs
-                - npm install -g serverless
-                - wget -q https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
-                - dpkg -i packages-microsoft-prod.deb
-                - apt install apt-transport-https
-                - apt update
-                - apt install dotnet-sdk-2.1.4
+                - make install
             build:
               commands:
-                - ./build.sh
+                - make build
             post_build:
               commands:
-                - sls deploy
+                - make deploy
 
   ServerlessDeployRole:
     Type: AWS::IAM::Role
